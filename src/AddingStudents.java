@@ -26,6 +26,7 @@ public class AddingStudents {
 
         //Set the array with the size provided
         students = new String[numOfStudents][4];
+        sortStudents = new String[numOfStudents][4];
         keybd.nextLine(); // flush the buffer
 
         //Enter the students name, id number, major, and educational department
@@ -46,7 +47,13 @@ public class AddingStudents {
                     students[index1][2], students[index1][3]);
         }*/
 
-        sortStudents = students; // Don't really need a copy but just to keep the original
+        // Don't really need a copy but just to keep the original
+        for (int i = 0; i < numOfStudents; i++){
+            for (int i2 = 0; i2 < 4; i2++){
+                sortStudents[i][i2] = students[i][i2];
+            }
+
+        }
         sortArray(sortStudents); // call method to sort
 
         // Now to output the information
